@@ -1,8 +1,8 @@
 const isValid = (req, res, next) => {
-    let { email, password, username } = req.body
-    console.log(email, password, username);
+    let { Description, Status, TaskName } = req.body
+    console.log(Description, Status, TaskName);
 
-    if (!email || !password || !username) {
+    if (!Description || !Status || !TaskName) {
         res.send("Invalid Data")
     } else {
         next()
