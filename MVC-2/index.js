@@ -1,11 +1,15 @@
-const express=require("express")
-const app=express()
+const express = require("express")
+const dbConnection = require("./config/db")
+const app = express()
 app.use(express.json())
 
-app.get("/",(req,res)=>{
+const PORT = process.env.PORT || 8090
+
+app.get("/", (req, res) => {
     res.send("welcome")
 })
 
-app.listen(8090,()=>{
-    console.log("listening on 8090!!");
+app.listen(PORT, () => {
+    console.log(`listening on ${PORT}`)
+    dbConnection()
 })
